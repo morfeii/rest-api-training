@@ -2,6 +2,10 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+const CONTACTS = [
+  { id: 1, name: 'AAA', value: '12324325', marked: false },
+];
+
 app.use(express.static(path.resolve(__dirname, 'client')));
 
 app.get('*', (req, res) => {
