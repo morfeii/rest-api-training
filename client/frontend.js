@@ -31,6 +31,9 @@ new Vue({
     deleteContact(id) {
       this.contacts = this.contacts.filter(c => c.id !== id);
     },
+  },
+  async mounted() {
+    this.contacts = await request('/api/contacts')
   }
 });
 
